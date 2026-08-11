@@ -28,11 +28,17 @@ export default function ForTeachers() {
   ];
 
   return (
-    <div className="bg-white dark:bg-slate-950 min-h-screen transition-colors duration-300">
+    <div className="bg-transparent min-h-screen transition-colors duration-300">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-40 lg:pb-24">
+      <section className="relative overflow-hidden bg-transparent">
+        {/* Animated Background Orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+          <div className="absolute top-[20%] left-[10%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-purple-400/20 dark:bg-purple-600/20 rounded-full blur-[100px] animate-pulse"></div>
+          <div className="absolute bottom-[20%] right-[10%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-blue-400/20 dark:bg-[#1A61F7]/20 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
+
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-40 lg:pb-24 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
               <span className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -45,10 +51,10 @@ export default function ForTeachers() {
                 Reach thousands of students, use powerful teaching tools, set your own schedule, and earn on your terms.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/book-demo" className="btn-primary px-8 py-4 text-lg rounded-xl">
+                <Link to="/book-demo" className="btn-primary px-8 py-4 text-lg rounded-xl shadow-[0_0_20px_rgba(26,97,247,0.4)]">
                   Apply as Tutor <ChevronRight size={20} />
                 </Link>
-                <Link to="/" className="btn-outline px-8 py-4 text-lg rounded-xl">
+                <Link to="/" className="btn-outline px-8 py-4 text-lg rounded-xl bg-white/50 dark:bg-slate-900/50 backdrop-blur-md">
                   Learn More
                 </Link>
               </div>
@@ -58,18 +64,18 @@ export default function ForTeachers() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-white dark:bg-slate-950 transition-colors">
+      <section className="py-20 bg-transparent transition-colors relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">Why Teach on ScholarB</h2>
-            <p className="text-slate-500 dark:text-slate-400 text-lg">Everything you need to succeed as a tutor</p>
+            <p className="text-slate-500 dark:text-slate-400 text-lg font-medium">Everything you need to succeed as a tutor</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {benefits.map((b, i) => (
-              <motion.div key={i} whileHover={{ y: -5 }} className="p-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 hover:shadow-lg transition-all">
-                <div className={`w-14 h-14 rounded-xl ${b.color} flex items-center justify-center mb-4`}>{b.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{b.title}</h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{b.desc}</p>
+              <motion.div key={i} whileHover={{ y: -8, scale: 1.02 }} className="p-8 rounded-3xl border border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className={`w-14 h-14 rounded-xl ${b.color} flex items-center justify-center mb-6 shadow-sm`}>{b.icon}</div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{b.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{b.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -77,7 +83,7 @@ export default function ForTeachers() {
       </section>
 
       {/* Earning Potential */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors">
+      <section className="py-20 bg-transparent border-t border-white/20 dark:border-slate-800 transition-colors relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">Earning Potential</h2>
@@ -85,22 +91,22 @@ export default function ForTeachers() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {earningTiers.map((tier, i) => (
-              <motion.div key={i} whileHover={{ y: -5 }} className={`relative p-6 rounded-2xl border-2 ${tier.color} bg-white dark:bg-slate-800 hover:shadow-xl transition-all ${tier.popular ? 'shadow-lg' : ''}`}>
+              <motion.div key={i} whileHover={{ y: -8 }} className={`relative p-8 rounded-3xl border ${tier.popular ? 'border-[#1A61F7] dark:border-blue-500 bg-white dark:bg-slate-800' : 'border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl'} shadow-lg hover:shadow-2xl transition-all duration-300`}>
                 {tier.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1A61F7] text-white text-xs font-bold px-4 py-1 rounded-full">Most Popular</div>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg">Most Popular</div>
                 )}
                 <div className="text-center mb-6 pt-2">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{tier.level}</h3>
-                  <p className="text-2xl font-extrabold text-[#1A61F7] dark:text-blue-400">{tier.range}</p>
+                  <p className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#1A61F7] to-purple-500">{tier.range}</p>
                 </div>
-                <ul className="space-y-3">
+                <ul className="space-y-4">
                   {tier.features.map((f, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
-                      <CheckCircle size={16} className="text-green-500 flex-shrink-0" /> {f}
+                    <li key={j} className="flex items-center gap-3 text-sm text-slate-600 dark:text-slate-400 font-medium">
+                      <CheckCircle size={18} className="text-blue-500 flex-shrink-0" /> {f}
                     </li>
                   ))}
                 </ul>
-                <Link to="/book-demo" className={`mt-6 w-full py-2.5 text-center rounded-xl text-sm font-semibold block transition-colors ${tier.popular ? 'btn-primary' : 'btn-outline'}`}>
+                <Link to="/book-demo" className={`mt-8 w-full py-3 text-center rounded-xl text-sm font-semibold block transition-all ${tier.popular ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1' : 'btn-outline bg-white/50 dark:bg-slate-900/50 hover:bg-white dark:hover:bg-slate-800'}`}>
                   Get Started
                 </Link>
               </motion.div>
@@ -110,7 +116,7 @@ export default function ForTeachers() {
       </section>
 
       {/* How to Get Started */}
-      <section className="py-20 bg-white dark:bg-slate-950 transition-colors">
+      <section className="py-20 bg-transparent transition-colors relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">How to Get Started</h2>
@@ -135,22 +141,23 @@ export default function ForTeachers() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors">
+      <section className="py-24 bg-transparent border-t border-white/20 dark:border-slate-800 transition-colors relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">What Teachers Say</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">What Teachers Say</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
-              <motion.div key={i} whileHover={{ y: -4 }} className="p-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800">
-                <div className="flex gap-1 mb-4">
+              <motion.div key={i} whileHover={{ y: -8 }} className="p-8 rounded-3xl border border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
+                <div className="flex gap-1 mb-4 relative z-10">
                   {Array.from({ length: 5 }).map((_, j) => (
                     <Star key={j} size={16} className={j < t.rating ? "fill-yellow-400 text-yellow-400" : "text-slate-300 dark:text-slate-600"} />
                   ))}
                 </div>
-                <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed italic">"{t.text}"</p>
-                <div>
-                  <p className="font-bold text-slate-900 dark:text-white text-sm">{t.name}</p>
+                <p className="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed italic relative z-10">"{t.text}"</p>
+                <div className="relative z-10">
+                  <p className="font-bold text-slate-900 dark:text-white text-base">{t.name}</p>
                   <p className="text-xs text-slate-500 dark:text-slate-400">{t.subject}</p>
                 </div>
               </motion.div>
@@ -160,11 +167,17 @@ export default function ForTeachers() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-r from-[#7C3AED] to-[#1A61F7] py-16">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Join Our Growing Community of Expert Tutors</h2>
-          <p className="text-purple-100 text-lg mb-8 max-w-2xl mx-auto">Start teaching today and make a real impact on students' lives.</p>
-          <Link to="/book-demo" className="inline-flex items-center gap-2 bg-white text-[#7C3AED] px-8 py-4 rounded-xl font-bold text-lg hover:bg-purple-50 transition-colors shadow-lg">
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#1A61F7] to-[#2563EB] py-20 animate-gradient bg-[length:200%_auto]">
+        {/* Floating elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-[20%] left-[10%] w-20 h-20 border border-white/10 rounded-full animate-float"></div>
+          <div className="absolute bottom-[20%] right-[15%] w-16 h-16 border border-white/10 rounded-full animate-float-slow"></div>
+        </div>
+        
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6">Ready to Start Teaching?</h2>
+          <p className="text-blue-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto font-medium">Join our growing community of expert tutors and start earning on your terms.</p>
+          <Link to="/book-demo" className="inline-flex items-center gap-2 bg-white text-[#1A61F7] px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all shadow-xl hover:-translate-y-1">
             Apply Now <ChevronRight size={20} />
           </Link>
         </div>

@@ -19,8 +19,15 @@ export default function DemoBookingFlow() {
   ];
 
   return (
-    <div className="bg-transparent min-h-screen pt-32 pb-20 transition-colors duration-300">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-transparent min-h-screen pt-32 pb-20 transition-colors duration-300 relative overflow-hidden">
+      
+      {/* Animated Background Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <div className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-blue-400/20 dark:bg-[#1A61F7]/20 rounded-full blur-[100px] animate-pulse"></div>
+        <div className="absolute bottom-[10%] right-[20%] w-[500px] h-[500px] bg-purple-400/20 dark:bg-purple-600/20 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center mb-10">
@@ -31,16 +38,16 @@ export default function DemoBookingFlow() {
         {/* Progress Bar */}
         <div className="mb-12">
           <div className="flex justify-between items-center relative">
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-200 z-0 rounded-full"></div>
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-200/50 dark:bg-slate-800/50 backdrop-blur-sm z-0 rounded-full"></div>
             <div 
-              className="absolute left-0 top-1/2 -translate-y-1/2 h-1 bg-primary-600 z-0 rounded-full transition-all duration-500 ease-in-out"
+              className="absolute left-0 top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-blue-500 to-purple-500 z-0 rounded-full transition-all duration-500 ease-in-out shadow-[0_0_10px_rgba(59,130,246,0.5)]"
               style={{ width: `${((step - 1) / (totalSteps - 1)) * 100}%` }}
             ></div>
             
             {stepsList.map((s, idx) => (
               <div key={idx} className="relative z-10 flex flex-col items-center">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-colors ${
-                  step > s.num ? 'bg-blue-600 text-white' : step === s.num ? 'bg-blue-600 text-white ring-4 ring-blue-100 dark:ring-blue-900/50' : 'bg-white border-2 border-slate-200 dark:border-slate-800 text-slate-400 dark:bg-slate-900'
+                  step > s.num ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-lg' : step === s.num ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white ring-4 ring-blue-100 dark:ring-blue-900/50 shadow-lg' : 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200 dark:border-slate-800 text-slate-400'
                 }`}>
                   {step > s.num ? <CheckCircle size={20} /> : s.num}
                 </div>
@@ -56,7 +63,7 @@ export default function DemoBookingFlow() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }} 
             animate={{ opacity: 1, scale: 1 }} 
-            className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl p-12 text-center"
+            className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-3xl border border-white/50 dark:border-slate-700 shadow-2xl p-12 text-center"
           >
             <div className="w-24 h-24 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle size={48} className="text-green-500" />
@@ -74,8 +81,8 @@ export default function DemoBookingFlow() {
           </motion.div>
         ) : (
           /* Form Container */
-          <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden relative">
-            <div className="h-2 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+          <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-3xl border border-white/50 dark:border-slate-700 shadow-2xl overflow-hidden relative">
+            <div className="h-2 bg-gradient-to-r from-blue-500 via-[#1A61F7] to-purple-500 w-full absolute top-0 left-0"></div>
           
           <div className="p-8 sm:p-10 min-h-[450px]">
             <AnimatePresence mode="wait">

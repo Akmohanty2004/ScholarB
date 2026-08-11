@@ -24,11 +24,17 @@ export default function ForStudents() {
   ];
 
   return (
-    <div className="bg-white dark:bg-slate-950 min-h-screen transition-colors duration-300">
+    <div className="bg-transparent min-h-screen transition-colors duration-300">
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-40 lg:pb-24">
+      <section className="relative overflow-hidden bg-transparent">
+        {/* Animated Background Orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+          <div className="absolute top-[20%] left-[10%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-blue-400/20 dark:bg-[#1A61F7]/20 rounded-full blur-[100px] animate-pulse"></div>
+          <div className="absolute bottom-[20%] right-[10%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-purple-400/20 dark:bg-purple-600/20 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+        </div>
+        
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-40 lg:pb-24 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
               <span className="inline-flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-[#1A61F7] dark:text-blue-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -41,10 +47,10 @@ export default function ForStudents() {
                 Connect with expert tutors who understand your learning style. Get personalized attention, flexible scheduling, and real results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/tutors" className="btn-primary px-8 py-4 text-lg rounded-xl">
+                <Link to="/tutors" className="btn-primary px-8 py-4 text-lg rounded-xl shadow-[0_0_20px_rgba(26,97,247,0.4)]">
                   Find a Tutor <ChevronRight size={20} />
                 </Link>
-                <Link to="/book-demo" className="btn-outline px-8 py-4 text-lg rounded-xl">
+                <Link to="/book-demo" className="btn-outline px-8 py-4 text-lg rounded-xl bg-white/50 dark:bg-slate-900/50 backdrop-blur-md">
                   Book Free Demo
                 </Link>
               </div>
@@ -54,18 +60,18 @@ export default function ForStudents() {
       </section>
 
       {/* Benefits */}
-      <section className="py-20 bg-white dark:bg-slate-950 transition-colors">
+      <section className="py-20 bg-transparent transition-colors relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">Why Students Love ScholarB</h2>
-            <p className="text-slate-500 dark:text-slate-400 text-lg">Everything you need to excel in your studies</p>
+            <p className="text-slate-500 dark:text-slate-400 text-lg font-medium">Everything you need to excel in your studies</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b, i) => (
-              <motion.div key={i} whileHover={{ y: -5 }} className="p-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 hover:shadow-lg transition-all">
-                <div className={`w-14 h-14 rounded-xl ${b.color} flex items-center justify-center mb-4`}>{b.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{b.title}</h3>
-                <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{b.desc}</p>
+              <motion.div key={i} whileHover={{ y: -8, scale: 1.02 }} className="p-8 rounded-3xl border border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className={`w-14 h-14 rounded-xl ${b.color} flex items-center justify-center mb-6 shadow-sm`}>{b.icon}</div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{b.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{b.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -73,8 +79,8 @@ export default function ForStudents() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 transition-colors">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-transparent border-t border-white/20 dark:border-slate-800 transition-colors relative z-10">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">How It Works</h2>
             <p className="text-slate-500 dark:text-slate-400 text-lg">Get started in 3 simple steps</p>
@@ -99,14 +105,15 @@ export default function ForStudents() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white dark:bg-slate-950 transition-colors">
+      <section className="py-24 bg-transparent border-t border-white/20 dark:border-slate-800 transition-colors relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">What Students Say</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">What Students Say</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
-              <motion.div key={i} whileHover={{ y: -4 }} className="p-6 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900">
+              <motion.div key={i} whileHover={{ y: -8 }} className="p-8 rounded-3xl border border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-xl relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: 5 }).map((_, j) => (
                     <Star key={j} size={16} className={j < t.rating ? "fill-yellow-400 text-yellow-400" : "text-slate-300 dark:text-slate-600"} />
@@ -124,15 +131,21 @@ export default function ForStudents() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-r from-[#1A61F7] to-[#2563EB] py-16">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Start Your Learning Journey Today</h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">Join thousands of students who are already achieving their academic goals with ScholarB.</p>
+      <section className="relative overflow-hidden bg-gradient-to-r from-[#1A61F7] to-[#2563EB] py-20 animate-gradient bg-[length:200%_auto]">
+        {/* Floating elements */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-[20%] left-[10%] w-20 h-20 border border-white/10 rounded-full animate-float"></div>
+          <div className="absolute bottom-[20%] right-[15%] w-16 h-16 border border-white/10 rounded-full animate-float-slow"></div>
+        </div>
+        
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6">Start Your Learning Journey Today</h2>
+          <p className="text-blue-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto font-medium">Join thousands of students who are already achieving their academic goals with ScholarB.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book-demo" className="inline-flex items-center justify-center gap-2 bg-white text-[#1A61F7] px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg">
+            <Link to="/book-demo" className="inline-flex items-center justify-center gap-2 bg-white text-[#1A61F7] px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all shadow-xl hover:-translate-y-1">
               Book a Free Demo <ChevronRight size={20} />
             </Link>
-            <Link to="/tutors" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-colors">
+            <Link to="/tutors" className="inline-flex items-center justify-center gap-2 border-2 border-white/80 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm hover:-translate-y-1">
               Browse Tutors
             </Link>
           </div>

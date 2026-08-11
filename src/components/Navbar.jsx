@@ -96,8 +96,10 @@ export default function Navbar() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 dark:bg-[#0B1120]/90 backdrop-blur-2xl border-b border-slate-200/60 dark:border-slate-800/60 shadow-sm ${
-        scrolled ? 'py-2' : 'py-3'
+      className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1400px] z-50 transition-all duration-500 rounded-full ${
+        scrolled 
+          ? 'py-3 bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-2xl border border-white/20 dark:border-slate-700/60 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-xl' 
+          : 'py-4 bg-white/40 dark:bg-[#0B1120]/40 backdrop-blur-md border border-white/10 shadow-lg'
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,7 +113,7 @@ export default function Navbar() {
                 alt="ScholarB Logo" 
                 className="h-14 sm:h-16 max-w-[240px] w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
               />
-              <span className="font-extrabold text-2xl tracking-tight text-slate-900 dark:text-white">
+              <span className="font-extrabold text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 group-hover:from-[#1A61F7] group-hover:to-purple-500 transition-all duration-500">
                 ScholarB
               </span>
             </Link>
@@ -128,8 +130,8 @@ export default function Navbar() {
                       to={nav.path} 
                       className={`px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 relative overflow-hidden ${
                         isActive 
-                          ? 'text-[#1A61F7] dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20' 
-                          : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50'
+                          ? 'text-white bg-gradient-to-r from-[#1A61F7] to-blue-600 shadow-md' 
+                          : 'text-slate-600 dark:text-slate-300 hover:text-[#1A61F7] dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20'
                       }`}
                     >
                       {nav.label}
@@ -170,13 +172,13 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-3 pl-4 ml-2 border-l border-slate-200 dark:border-slate-800 h-8">
               <Link 
                 to="/login" 
-                className="font-bold text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+                className="font-bold text-sm text-slate-600 dark:text-slate-300 hover:text-[#1A61F7] dark:hover:text-blue-400 transition-colors"
               >
                 Log In
               </Link>
               <Link 
                 to="/signup" 
-                className="group relative flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-2.5 rounded-full font-bold text-sm shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+                className="group relative flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)] transition-all duration-300 hover:-translate-y-0.5"
               >
                 Join Free 
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -205,8 +207,8 @@ export default function Navbar() {
             >
               <div className="max-w-3xl mx-auto pb-4">
                 <form onSubmit={handleSearch} className="relative group">
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-[#1A61F7] to-[#8B5CF6] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
-                  <div className="relative flex items-center bg-white dark:bg-[#0B1120] rounded-2xl p-2 border border-slate-200/50 dark:border-slate-700/50">
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-[#1A61F7] to-[#8B5CF6] rounded-full blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
+                  <div className="relative flex items-center bg-white/90 dark:bg-[#0F172A]/90 backdrop-blur-lg rounded-full p-2 border border-slate-200/50 dark:border-slate-700/50 shadow-xl">
                     <Search className="text-slate-400 ml-3 mr-2" size={20} />
                     <input
                       type="text"
@@ -216,7 +218,7 @@ export default function Navbar() {
                       placeholder="What do you want to learn today?"
                       className="flex-grow py-3 px-2 bg-transparent text-slate-900 dark:text-white placeholder-slate-400 outline-none text-base font-medium"
                     />
-                    <button type="submit" className="bg-[#1A61F7] hover:bg-blue-600 text-white px-6 py-2.5 rounded-xl font-bold transition-all shadow-md">
+                    <button type="submit" className="bg-[#1A61F7] hover:bg-blue-600 text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-md">
                       Search
                     </button>
                   </div>
@@ -231,10 +233,10 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-white dark:bg-[#0B1120] border-b border-slate-200 dark:border-slate-800 shadow-2xl lg:hidden max-h-[85vh] overflow-y-auto"
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full left-0 right-0 mt-4 bg-white/95 dark:bg-[#0B1120]/95 backdrop-blur-3xl border border-slate-200/50 dark:border-slate-700/50 shadow-[0_20px_50px_rgba(0,0,0,0.15)] rounded-3xl lg:hidden max-h-[80vh] overflow-y-auto z-50 overflow-hidden"
           >
             <div className="px-4 py-6 space-y-6">
               <div className="space-y-2">

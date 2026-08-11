@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, ChevronRight, TrendingUp, GraduationCap, Users, BookOpen, Target, CheckCircle, Star, MonitorPlay, Clock, Sparkles, X, Award, Quote, Video, BrainCircuit, MessageCircle, BarChart3 } from 'lucide-react';
+import { Calendar, ChevronRight, TrendingUp, GraduationCap, Users, BookOpen, Target, CheckCircle, Star, MonitorPlay, Clock, Sparkles, X, Award, Quote, Video, BrainCircuit, MessageCircle, BarChart3, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import createVideo from '../assets/create_a_video.mp4';
 
@@ -600,6 +600,60 @@ export default function LandingPage() {
             ))}
           </div>
         </motion.div>
+      </section>
+
+      {/* Global Impact Section */}
+      <section className="relative py-24 overflow-hidden bg-[#0B1120]">
+        {/* Animated Background Mesh */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[800px] h-[600px] md:h-[800px] bg-gradient-to-tr from-[#1A61F7]/20 via-purple-600/20 to-pink-500/20 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        </div>
+
+        <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full bg-blue-900/50 border border-blue-700/50 text-blue-400 font-bold text-sm tracking-wide uppercase"
+          >
+            <Globe size={16} /> Global Impact
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-16 tracking-tight"
+          >
+            Empowering students <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">worldwide.</span>
+          </motion.h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+            {[
+              { number: "50K+", label: "Active Students", icon: <Users size={32} /> },
+              { number: "98%", label: "Satisfaction Rate", icon: <Star size={32} className="fill-blue-400" /> },
+              { number: "2000+", label: "Expert Tutors", icon: <Award size={32} /> },
+              { number: "1M+", label: "Live Classes", icon: <MonitorPlay size={32} /> }
+            ].map((stat, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 + (idx * 0.1), duration: 0.6 }}
+                className="flex flex-col items-center group"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300 shadow-[0_0_30px_rgba(37,99,235,0)] group-hover:shadow-[0_0_30px_rgba(37,99,235,0.3)]">
+                  {stat.icon}
+                </div>
+                <div className="text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-400 mb-2">{stat.number}</div>
+                <div className="text-slate-400 font-medium text-lg">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Testimonials Marquee Section */}
