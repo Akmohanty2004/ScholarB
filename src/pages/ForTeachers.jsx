@@ -44,7 +44,7 @@ export default function ForTeachers() {
               <span className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
                 <BookOpen size={16} /> For Teachers
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-tight mb-4 sm:mb-6">
                 Teach Your Way,<br/><span className="text-gradient">Grow Your Impact</span>
               </h1>
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -67,12 +67,12 @@ export default function ForTeachers() {
       <section className="py-20 bg-transparent transition-colors relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">Why Teach on ScholarB</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">Why Teach on ScholarB</h2>
             <p className="text-slate-500 dark:text-slate-400 text-lg font-medium">Everything you need to succeed as a tutor</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {benefits.map((b, i) => (
-              <motion.div key={i} whileHover={{ y: -8, scale: 1.02 }} className="p-8 rounded-3xl border border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+              <motion.div key={i} whileHover={{ y: -8, scale: 1.02 }} className="p-6 sm:p-8 rounded-3xl border border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-lg hover:shadow-2xl transition-all duration-300">
                 <div className={`w-14 h-14 rounded-xl ${b.color} flex items-center justify-center mb-6 shadow-sm`}>{b.icon}</div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{b.title}</h3>
                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{b.desc}</p>
@@ -86,18 +86,18 @@ export default function ForTeachers() {
       <section className="py-20 bg-transparent border-t border-white/20 dark:border-slate-800 transition-colors relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">Earning Potential</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">Earning Potential</h2>
             <p className="text-slate-500 dark:text-slate-400 text-lg">Grow your income as you grow your expertise</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {earningTiers.map((tier, i) => (
-              <motion.div key={i} whileHover={{ y: -8 }} className={`relative p-8 rounded-3xl border ${tier.popular ? 'border-[#1A61F7] dark:border-blue-500 bg-white dark:bg-slate-800' : 'border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl'} shadow-lg hover:shadow-2xl transition-all duration-300`}>
+              <motion.div key={i} whileHover={{ y: -8 }} className={`relative p-6 sm:p-8 rounded-3xl border ${tier.popular ? 'border-[#1A61F7] dark:border-blue-500 bg-white dark:bg-slate-800' : 'border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl'} shadow-lg hover:shadow-2xl transition-all duration-300`}>
                 {tier.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-lg">Most Popular</div>
                 )}
                 <div className="text-center mb-6 pt-2">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{tier.level}</h3>
-                  <p className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#1A61F7] to-purple-500">{tier.range}</p>
+                  <p className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#1A61F7] to-purple-500">{tier.range}</p>
                 </div>
                 <ul className="space-y-4">
                   {tier.features.map((f, j) => (
@@ -119,7 +119,7 @@ export default function ForTeachers() {
       <section className="py-20 bg-transparent transition-colors relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">How to Get Started</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">How to Get Started</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
@@ -144,11 +144,11 @@ export default function ForTeachers() {
       <section className="py-24 bg-transparent border-t border-white/20 dark:border-slate-800 transition-colors relative z-10">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">What Teachers Say</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-3 sm:mb-4">What Teachers Say</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
-              <motion.div key={i} whileHover={{ y: -8 }} className="p-8 rounded-3xl border border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-xl relative overflow-hidden group">
+              <motion.div key={i} whileHover={{ y: -8 }} className="p-6 sm:p-8 rounded-3xl border border-white/60 dark:border-slate-700 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-500"></div>
                 <div className="flex gap-1 mb-4 relative z-10">
                   {Array.from({ length: 5 }).map((_, j) => (
@@ -175,7 +175,7 @@ export default function ForTeachers() {
         </div>
         
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6">Ready to Start Teaching?</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6">Ready to Start Teaching?</h2>
           <p className="text-blue-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto font-medium">Join our growing community of expert tutors and start earning on your terms.</p>
           <Link to="/book-demo" className="inline-flex items-center gap-2 bg-white text-[#1A61F7] px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all shadow-xl hover:-translate-y-1">
             Apply Now <ChevronRight size={20} />

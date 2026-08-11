@@ -15,7 +15,7 @@ import Signup from './pages/Signup';
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-slate-50 to-purple-50 dark:bg-none dark:bg-[#0B1120] transition-colors duration-500">
+      <div className="flex flex-col min-h-screen overflow-x-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-slate-50 to-purple-50 dark:bg-none dark:bg-[#0B1120] transition-colors duration-500">
         <Navbar />
         <main className="flex-grow">
           <Routes>

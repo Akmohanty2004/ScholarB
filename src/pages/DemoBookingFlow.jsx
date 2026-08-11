@@ -31,7 +31,7 @@ export default function DemoBookingFlow() {
         
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white  mb-2">Book Your Free Demo</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">Book Your Free Demo</h1>
           <p className="text-slate-600 dark:text-slate-400 dark:text-slate-400 ">Tell us what you need, and we'll match you with the perfect tutor.</p>
         </div>
 
@@ -68,7 +68,7 @@ export default function DemoBookingFlow() {
             <div className="w-24 h-24 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
               <CheckCircle size={48} className="text-green-500" />
             </div>
-            <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-4">Booking Confirmed!</h2>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-3 sm:mb-4">Booking Confirmed!</h2>
             <p className="text-slate-600 dark:text-slate-400 text-lg mb-8 max-w-md mx-auto">
               Your free demo session has been successfully scheduled. We have sent the meeting link and details to your email and WhatsApp.
             </p>
@@ -84,7 +84,7 @@ export default function DemoBookingFlow() {
           <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-3xl border border-white/50 dark:border-slate-700 shadow-2xl overflow-hidden relative">
             <div className="h-2 bg-gradient-to-r from-blue-500 via-[#1A61F7] to-purple-500 w-full absolute top-0 left-0"></div>
           
-          <div className="p-8 sm:p-10 min-h-[450px]">
+          <div className="p-5 sm:p-10 min-h-[450px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={step}
@@ -97,7 +97,7 @@ export default function DemoBookingFlow() {
                 {/* STEP 1: Academic Profile */}
                 {step === 1 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white  mb-6">Academic Profile</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">Academic Profile</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 dark:text-slate-300  mb-2">Country</label>
@@ -147,7 +147,7 @@ export default function DemoBookingFlow() {
                 {/* STEP 2: Learning Preferences */}
                 {step === 2 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white  mb-6">Learning Preferences</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">Learning Preferences</h2>
                     
                     <div className="space-y-6">
                       <div>
@@ -194,10 +194,10 @@ export default function DemoBookingFlow() {
                   </div>
                 )}
 
-                {/* STEP 3: Demo Availability */}
+                {/* STEP 3: Schedule Details */}
                 {step === 3 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white  mb-6">Demo Availability</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">Schedule Details</h2>
                     <p className="text-slate-600 dark:text-slate-400 dark:text-slate-400  mb-6">When would you like to schedule your free trial class?</p>
 
                     <div className="mb-6">
@@ -227,7 +227,7 @@ export default function DemoBookingFlow() {
                 {/* STEP 4: Your Details */}
                 {step === 4 && (
                   <div>
-                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white  mb-6">Your Details</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6">Your Details</h2>
                     
                     <div className="space-y-5">
                       <div>
@@ -285,7 +285,7 @@ export default function DemoBookingFlow() {
           </div>
 
           {/* Form Navigation */}
-          <div className="p-6 border-t border-slate-100 dark:border-slate-800  bg-slate-50 dark:bg-slate-900  flex justify-between items-center">
+          <div className="p-5 sm:p-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 flex justify-between items-center">
             {step > 1 ? (
               <button 
                 onClick={prevStep}

@@ -174,7 +174,7 @@ export default function TutorListing() {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full py-4 px-2 bg-transparent text-slate-900 dark:text-white placeholder-slate-400 outline-none text-lg font-medium"
               />
-              <button className="bg-gradient-to-r from-[#1A61F7] to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-500/30">
+              <button className="bg-gradient-to-r from-[#1A61F7] to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-5 py-3 sm:px-8 sm:py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-500/30">
                 Search
               </button>
             </div>

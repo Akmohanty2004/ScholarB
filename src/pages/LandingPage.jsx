@@ -112,7 +112,7 @@ export default function LandingPage() {
               </motion.div>
 
               {/* Heading */}
-              <motion.h1 variants={fadeInUp} className="text-[42px] sm:text-[52px] lg:text-[60px] xl:text-[68px] font-extrabold leading-[1.08] tracking-tight mb-6">
+              <motion.h1 variants={fadeInUp} className="text-3xl sm:text-5xl lg:text-6xl xl:text-[68px] font-extrabold leading-[1.15] sm:leading-[1.1] tracking-tight mb-4 sm:mb-6">
                 <span className="text-slate-900 dark:text-white">Find the Right</span><br/>
                 <span className="text-slate-900 dark:text-white">Tutor.</span><br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1A61F7] via-purple-600 to-pink-500 animate-gradient bg-[length:200%_auto]">Achieve Your Goals.</span>
@@ -160,7 +160,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: -30, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: 0.8, duration: 0.5, type: "spring" }}
-                className="absolute -top-6 lg:-top-10 left-[2%] lg:left-[5%] z-20 animate-float"
+                className="absolute -top-6 lg:-top-10 left-[2%] lg:left-[5%] z-20 animate-float scale-75 lg:scale-100 origin-bottom-left"
               >
                 <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl px-5 py-3 shadow-lg border border-white/50 dark:border-slate-700 flex items-center gap-3 card-3d">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
@@ -178,7 +178,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: -30, scale: 0.8 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: 0.9, duration: 0.5, type: "spring" }}
-                className="absolute -top-6 lg:-top-10 right-[2%] lg:right-[15%] z-20 animate-float-slow"
+                className="absolute -top-6 lg:-top-10 right-[2%] lg:right-[15%] z-20 animate-float-slow scale-75 lg:scale-100 origin-bottom-right"
               >
                 <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md rounded-2xl px-5 py-3 shadow-lg border border-white/50 dark:border-slate-700 flex items-center gap-3 card-3d">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-md">
@@ -283,14 +283,14 @@ export default function LandingPage() {
       </section>
 
       {/* Role Selection Section */}
-      <section className="bg-white dark:bg-slate-950 py-20 transition-colors duration-300">
+      <section className="bg-white dark:bg-slate-950 py-16 md:py-20 transition-colors duration-300">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
           className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8"
         >
           <motion.div variants={fadeInUp} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">I want to join as a:</h2>
+            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">I want to join as a:</h2>
             <p className="text-slate-500 dark:text-slate-400 text-lg">Choose your role to see how ScholarB helps you</p>
           </motion.div>
 
@@ -364,7 +364,7 @@ export default function LandingPage() {
       </section>
 
       {/* Top Tutors Carousel */}
-      <section className="relative bg-transparent py-24 overflow-hidden border-t border-white/20 dark:border-slate-800 transition-colors">
+      <section className="relative bg-transparent py-16 md:py-24 overflow-hidden border-t border-white/20 dark:border-slate-800 transition-colors">
         <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-blue-50/50 to-transparent dark:from-slate-900/50 dark:to-transparent pointer-events-none"></div>
         
         <motion.div 
@@ -377,7 +377,7 @@ export default function LandingPage() {
               <div className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 rounded-full bg-orange-100/80 dark:bg-orange-900/50 border border-orange-200 dark:border-orange-700 text-orange-600 dark:text-orange-400 font-bold text-sm tracking-wide uppercase shadow-sm">
                 <Award size={16} /> Top Rated
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4">
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold mb-4">
                 <span className="text-slate-900 dark:text-white">Learn from the </span>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1A61F7] to-purple-600">Best</span>
               </h2>
@@ -434,14 +434,14 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-slate-50 dark:bg-slate-900 py-20 border-t border-slate-100 dark:border-slate-800 transition-colors">
+      <section className="bg-slate-50 dark:bg-slate-900 py-16 md:py-20 border-t border-slate-100 dark:border-slate-800 transition-colors">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
           className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8"
         >
           <motion.div variants={fadeInUp} className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">How It Works</h2>
+            <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3">How It Works</h2>
             <p className="text-slate-500 dark:text-slate-400 text-lg">Get started in just 5 simple steps</p>
           </motion.div>
 
@@ -484,7 +484,7 @@ export default function LandingPage() {
       </section>
 
       {/* Features Bento Box */}
-      <section className="bg-white dark:bg-slate-950 py-24 border-t border-slate-100 dark:border-slate-800 transition-colors">
+      <section className="bg-white dark:bg-slate-950 py-16 md:py-24 border-t border-slate-100 dark:border-slate-800 transition-colors">
         <motion.div 
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
@@ -494,7 +494,7 @@ export default function LandingPage() {
             <div className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 rounded-full bg-purple-100/50 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800 text-purple-600 dark:text-purple-400 font-bold text-sm tracking-wide uppercase">
               <Sparkles size={16} /> Why Choose Us
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">Everything you need to succeed</h2>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">Everything you need to succeed</h2>
             <p className="text-slate-500 dark:text-slate-400 text-lg max-w-2xl mx-auto">A powerful, all-in-one platform designed to accelerate your learning.</p>
           </motion.div>
 
@@ -569,7 +569,7 @@ export default function LandingPage() {
       </section>
 
       {/* Boards Section */}
-      <section className="relative bg-slate-50 dark:bg-slate-900 py-24 border-t border-slate-100 dark:border-slate-800 transition-colors overflow-hidden">
+      <section className="relative bg-slate-50 dark:bg-slate-900 py-16 md:py-24 border-t border-slate-100 dark:border-slate-800 transition-colors overflow-hidden">
         {/* Subtle dot pattern */}
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 dark:opacity-10 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-200/20 dark:bg-blue-900/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
@@ -603,7 +603,7 @@ export default function LandingPage() {
       </section>
 
       {/* Global Impact Section */}
-      <section className="relative py-24 overflow-hidden bg-[#0B1120]">
+      <section className="relative py-16 md:py-24 overflow-hidden bg-[#0B1120]">
         {/* Animated Background Mesh */}
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[800px] h-[600px] md:h-[800px] bg-gradient-to-tr from-[#1A61F7]/20 via-purple-600/20 to-pink-500/20 rounded-full blur-[120px] animate-pulse"></div>
@@ -625,7 +625,7 @@ export default function LandingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-16 tracking-tight"
+            className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-10 sm:mb-16 tracking-tight"
           >
             Empowering students <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">worldwide.</span>
           </motion.h2>
@@ -657,7 +657,7 @@ export default function LandingPage() {
       </section>
 
       {/* Testimonials Marquee Section */}
-      <section className="bg-white dark:bg-slate-950 py-24 overflow-hidden border-t border-slate-100 dark:border-slate-800 transition-colors">
+      <section className="bg-white dark:bg-slate-950 py-16 md:py-24 overflow-hidden border-t border-slate-100 dark:border-slate-800 transition-colors">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
           <div className="inline-flex items-center gap-2 mb-3 px-4 py-1.5 rounded-full bg-pink-100/50 dark:bg-pink-900/30 border border-pink-200 dark:border-pink-800 text-pink-600 dark:text-pink-400 font-bold text-sm tracking-wide uppercase">
             <Star size={16} className="fill-pink-500" /> Success Stories

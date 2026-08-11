@@ -98,8 +98,8 @@ export default function Navbar() {
     <header 
       className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1400px] z-50 transition-all duration-500 rounded-full ${
         scrolled 
-          ? 'py-3 bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-2xl border border-white/20 dark:border-slate-700/60 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-xl' 
-          : 'py-4 bg-white/40 dark:bg-[#0B1120]/40 backdrop-blur-md border border-white/10 shadow-lg'
+          ? 'py-4 bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-2xl border border-white/20 dark:border-slate-700/60 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-xl' 
+          : 'py-5 bg-white/40 dark:bg-[#0B1120]/40 backdrop-blur-md border border-white/10 shadow-lg'
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,7 +163,7 @@ export default function Navbar() {
             {/* Dark Mode Toggle */}
             <button 
               onClick={toggleTheme} 
-              className="hidden sm:flex w-10 h-10 items-center justify-center rounded-full text-slate-500 hover:text-amber-500 dark:text-slate-400 dark:hover:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-300"
+              className="flex w-10 h-10 items-center justify-center rounded-full text-slate-500 hover:text-amber-500 dark:text-slate-400 dark:hover:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-300"
             >
               {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
