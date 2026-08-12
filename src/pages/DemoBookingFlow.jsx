@@ -152,7 +152,7 @@ export default function DemoBookingFlow() {
                     <div className="space-y-6">
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 dark:text-slate-300  mb-3">Preferred Class Mode</label>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <label className="border-2 border-primary-600 bg-primary-50 text-primary-700 p-4 rounded-xl cursor-pointer flex items-center justify-center gap-2 font-medium">
                             <input type="radio" name="mode" className="hidden" defaultChecked />
                             <div className="w-4 h-4 rounded-full border-4 border-primary-600 bg-white dark:bg-slate-900 "></div>
@@ -202,7 +202,7 @@ export default function DemoBookingFlow() {
 
                     <div className="mb-6">
                       <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 dark:text-slate-300  mb-3">Select Date</label>
-                      <div className="grid grid-cols-4 gap-3">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         {['Today', 'Tomorrow', 'Oct 14', 'Oct 15'].map((d, i) => (
                           <div key={i} className={`p-3 text-center rounded-xl border-2 cursor-pointer transition-colors ${i === 1 ? 'border-primary-600 bg-primary-50 text-primary-700 font-bold' : 'border-slate-200 dark:border-slate-800  hover:border-slate-300 dark:border-slate-700 '}`}>
                             {d}
@@ -213,7 +213,7 @@ export default function DemoBookingFlow() {
 
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 dark:text-slate-300  mb-3">Preferred Time Range</label>
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {['Morning (9 AM - 12 PM)', 'Afternoon (12 PM - 4 PM)', 'Evening (4 PM - 8 PM)', 'Night (8 PM - 10 PM)'].map((t, i) => (
                           <div key={i} className={`p-4 text-center rounded-xl border-2 cursor-pointer transition-colors ${i === 2 ? 'border-primary-600 bg-primary-50 text-primary-700 font-bold' : 'border-slate-200 dark:border-slate-800  hover:border-slate-300 dark:border-slate-700 '}`}>
                             {t}

@@ -98,8 +98,8 @@ export default function Navbar() {
     <header 
       className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-[1400px] z-50 transition-all duration-500 rounded-full ${
         scrolled 
-          ? 'py-4 bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-2xl border border-white/20 dark:border-slate-700/60 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-xl' 
-          : 'py-5 bg-white/40 dark:bg-[#0B1120]/40 backdrop-blur-md border border-white/10 shadow-lg'
+          ? 'py-2 bg-white/80 dark:bg-[#0B1120]/80 backdrop-blur-2xl border border-white/20 dark:border-slate-700/60 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-xl' 
+          : 'py-3 bg-white/40 dark:bg-[#0B1120]/40 backdrop-blur-md border border-white/10 shadow-lg'
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -111,9 +111,9 @@ export default function Navbar() {
               <img 
                 src={logo} 
                 alt="ScholarB Logo" 
-                className="h-14 sm:h-16 max-w-[240px] w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+                className="h-10 sm:h-12 max-w-[200px] w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
               />
-              <span className="font-extrabold text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 group-hover:from-[#1A61F7] group-hover:to-purple-500 transition-all duration-500">
+              <span className="font-extrabold text-xl sm:text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 group-hover:from-[#1A61F7] group-hover:to-purple-500 transition-all duration-500">
                 ScholarB
               </span>
             </Link>

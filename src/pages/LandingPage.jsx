@@ -456,7 +456,7 @@ export default function LandingPage() {
                 className="h-full bg-gradient-to-r from-blue-400 via-[#1A61F7] to-orange-400 shadow-[0_0_15px_rgba(26,97,247,0.5)]"
               />
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 relative z-10">
               {[
                 { icon: <Target size={28} />, title: "Choose Your Goal", desc: "Select what you want to learn.", color: "from-blue-400 to-blue-600" },
                 { icon: <Users size={28} />, title: "Pick a Tutor", desc: "Find the perfect match.", color: "from-purple-400 to-purple-600" },

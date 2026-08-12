@@ -382,7 +382,7 @@ export default function TutorListing() {
                       </div>
 
                       {/* Stats Grid */}
-                      <div className="grid grid-cols-2 gap-4 mt-auto border-t border-slate-100 dark:border-slate-800 pt-5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-auto border-t border-slate-100 dark:border-slate-800 pt-4 sm:pt-5">
                         <div className="flex items-center gap-3 text-sm font-medium text-slate-600 dark:text-slate-400">
                           <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500">
                             <Clock size={16} />
